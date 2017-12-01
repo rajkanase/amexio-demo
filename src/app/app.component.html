@@ -1,20 +1,69 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<!-- 
+  1.install npm install amexio-ng-extensions@3.0.11 --save (angular v less than 4)
+  2.add to appModule 
+    import { AmexioWidgetModule,CommonHttpService } from 'amexio-ng-extensions';
+      -provide service CommonHttpService and import Module
+  3.index.html
+    ****in header section - 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    ****in body section - 
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+   -->
 
+<amexio-text-input [fieldLabel]="'Name'" name ="name"
+[placeholder]="'Enter name'"
+[iconFeedBack]="true">
+</amexio-text-input>
+
+<amexio-text-input name ="name"
+[placeholder]="'Enter name'"
+[iconFeedBack]="false"
+[hasLabel]="false">
+</amexio-text-input>
+
+<!--Text Input with Validations-->
+
+<amexio-text-input  [fieldLabel]="'Name'" name ="name"
+ [placeholder]="'Enter name'"
+ [allowBlank]="false" [errorMsg] ="'Please enter last name'"
+ [minLength]="1" [minErrorMsg]="'Minimum 1 char required'"
+ [maxLength]="10"  [maxErrorMsg]="'Maximum 10 char allowed'"
+ [iconFeedBack]="true"  [enablePopOver]="true" [popoverPlacement]="'bottom'">
+</amexio-text-input>
+
+<!--Text Input disabled Property-->
+
+<amexio-text-input name ="name" 
+[fieldLabel]="'Name'"
+[placeholder]="'Enter name'"
+[disabled]="true">
+</amexio-text-input>
+
+<!--Text Input with Font Style : italic-->
+
+<amexio-text-input name ="name" 
+[fieldLabel]="'Name'"
+[placeholder]="'Enter name'"
+[fontStyle]="'italic'">
+</amexio-text-input>
+
+<!--Text Input with Font Family : Times New Roman and Font Size : large-->
+
+<amexio-text-input name ="name" 
+[fieldLabel]="'Name'"
+[placeholder]="'Enter name'"
+[fontFamily]="'Times New Roman'"
+[fontSize]="'large'">
+</amexio-text-input>
+
+<!--Text Input with Pattern : [a-z]-->
+
+<amexio-text-input name ="name" 
+[fieldLabel]="'Name'"
+[placeholder]="'Enter name'"
+[pattern]="'[a-z]'"
+[iconFeedBack]="true">
+</amexio-text-input>
